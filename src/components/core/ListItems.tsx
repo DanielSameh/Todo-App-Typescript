@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Checkbox } from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import TodoContext from '../../context/TodoContext';
-
+import colors from '../../styles/colors'
 
 type ItemType ={
   id:number
@@ -20,7 +20,7 @@ const Item: FC<ItemType> = (props) =>{
     <View style={styles.container}>
 <View style={{flex:0.15}}>
       <Checkbox
-      color={'#50C2C9'}
+      color={colors.cyan}
       status={isSelected ? 'checked' : 'unchecked'}
       onPress={() => {
         setSelection(!isSelected);
@@ -34,7 +34,7 @@ const Item: FC<ItemType> = (props) =>{
 
 <View style={{flex:0.12}}>
   <TouchableOpacity onPress={()=>deleteTask(props.id)}>
-<Ionicons name='trash'  size={25} color="#FF6262" />
+<Ionicons name='trash'  size={25} color= {colors.watermelon} />
 </TouchableOpacity>
 </View>
         
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
   flexWrap:'wrap',
   alignItems:'center',
   flexDirection:'row',
-  borderBottomColor: '#aaa',
   padding:10,
   },
   checkbox: {

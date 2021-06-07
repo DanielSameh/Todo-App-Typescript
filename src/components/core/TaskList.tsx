@@ -7,6 +7,7 @@ import { Divider } from 'react-native-paper'
 import TodoContext from '../../context/TodoContext'
 import React,{FC,useContext, useState} from 'react'
 import Row from '../layout/Row'
+import colors from '../../styles/colors'
 
 const TaskList:FC = () => {
 
@@ -41,7 +42,7 @@ width: 80%
 height:50%
 justify-content: space-around
 align-self: center
-background-color: white
+background-color: ${colors.white}
 border-radius: 15px
 margin-top: 15px
 elevation:6

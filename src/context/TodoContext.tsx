@@ -30,12 +30,12 @@ const [todoTask,setTodoTask] = useState<TaskType[]>([{
   task:'Heading to GYM',
 },])
 
-const addTask = (Task:string) =>{
-  setTodoTask([...todoTask,{id:Math.floor(Math.random()* 999), task:Task }])
+const addTask = (task:string) =>{
+  setTodoTask([...todoTask,{id:Math.floor(Math.random()* 999), task:task }])
 }
 const deleteTask =(id:number)=>{
  
- return setTodoTask(todoTask.filter((Task) => Task.id !== id  ) )
+ return setTodoTask(todoTask.filter((task) => task.id !== id  ) )
 }
 
   return(<TodoContext.Provider value={{todoTask,addTask,deleteTask}}>

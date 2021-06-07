@@ -2,6 +2,7 @@ import React, { FC, useContext,useState } from 'react'
 import {  View,TextInput, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import TodoContext from '../../context/TodoContext'
+import colors from '../../styles/colors'
 
 const {width} = Dimensions.get('screen')
 
@@ -21,14 +22,14 @@ const Input: FC<Props> = (props) => {
 
       <View style={{flex:0.1, alignItems:'flex-start'}}>
         <TouchableOpacity onPress={()=> {inputValue === ''? null : addTask(inputValue) , setInputValue('')}} >
-        <Ionicons name= { props.icon}  size={22} color="#50C2C9" />
+        <Ionicons name= { props.icon}  size={22} color={colors.cyan} />
         </TouchableOpacity>
       </View>
       <View style={{flex:1 }}>
         <TextInput 
         placeholder={props.placeholder} 
         value={inputValue} 
-        placeholderTextColor="#555" 
+        placeholderTextColor={colors.steelGray} 
         onChangeText={(text)=>setInputValue(text)} 
         onEndEditing={()=>{inputValue === ''? null : addTask(inputValue), setInputValue('')}}/>
       </View>
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     padding:5,
     alignItems:'center',
     alignSelf:'center',
-    borderBottomColor: '#555',
+    borderBottomColor: colors.steelGray,
     borderBottomWidth: 1,
   },
 })

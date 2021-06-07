@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextStyle } from 'react-native'
 import styled from 'styled-components'
-
+import colors from '../../styles/colors'
 
 type TypographyProps = {
   text: string
@@ -12,7 +12,7 @@ type TypographyProps = {
 
 const Typography: React.FC<TypographyProps> = ({
   text,
-  color = 'black',
+  color = colors.black,
   size = 14,
   fontWeight,
  
